@@ -4,17 +4,22 @@ using NetMQ;
 using NetMQ.Sockets;
 using UnityEngine;
 
-public class NetMqListener
+public class HelloRequester
 {
-    private readonly Thread _listenerWorker;
+    private readonly Thread _requestHelloThread;
     private bool _running;
 
-    public NetMqListener()
+    public HelloRequester()
     {
-        _listenerWorker = new Thread(ListenerWork);
+        // we need to create a thread instead of calling RequestHello() directly because it would block unity
+        // from doing other tasks like drawing game scenes
+        _requestHelloThread = new Thread(RequestHello);
     }
 
-    private void ListenerWork()
+    /// <summary>
+    /// Send Hello message to server and receive message back. Do it 10 times.
+    /// </summary>
+    private void RequestHello()
     {
         ForceDotNet.Force(); // this line is needed to prevent unity freeze after one use, not sure why yet
         using (var client = new RequestSocket())
@@ -37,30 +42,30 @@ public class NetMqListener
     public void Start()
     {
         _running = true;
-        _listenerWorker.Start();
+        _requestHelloThread.Start();
     }
 
     public void Stop()
     {
         _running = false;
-        // block main thread, wait for _listenerWorker to finish its job first, so we can be sure that 
+        // block main thread, wait for _requestHelloThread to finish its job first, so we can be sure that 
         // NetMQConfig.Cleanup() will be called before Unity object gets destroyed
-        _listenerWorker.Join();
+        _requestHelloThread.Join();
     }
 }
 
 public class ClientObject : MonoBehaviour
 {
-    private NetMqListener _netMqListener;
+    private HelloRequester _helloRequester;
 
     private void Start()
     {
-        _netMqListener = new NetMqListener();
-        _netMqListener.Start();
+        _helloRequester = new HelloRequester();
+        _helloRequester.Start();
     }
 
     private void OnDestroy()
     {
-        _netMqListener.Stop();
+        _helloRequester.Stop();
     }
 }
