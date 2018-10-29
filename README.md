@@ -6,7 +6,7 @@ A very simple, fast, and general inter-process communication example between Uni
 
 * Have you ever wanted to send Unity input to python and do some scientific work (maybe even machine learning task)
   and return the output to Unity?
-* Have you ever tried to communicate C# code in Unity3D with Python before but seems like there are no reliable solutions?
+* Have you ever tried to communicate C# code in Unity3D with Python before but could not find a satisfying solution?
 * Have you ever tried implementing communication protocol using file read/write and found out that it's a stupid approach?
 * Have you ever tried communicating using Web HTTP request and found out that it's stupidly slow and high latency?
 * Have you ever tried to communicate by emulating a serial port, and found out that it's not how cool guys do work?
@@ -18,8 +18,18 @@ then this repository is definitely for you!
 I've tried a lot. With a lot of searching on the internet, I've found no solutions that is simple, fast, and general
 enough that I can apply to any kind of communication between Python and Unity3D.
 
-_Until I found ZeroMQ and NetMQ approach (and some head scratching)._
+_Until I found ZeroMQ approach from this [repository](https://github.com/valkjsaaa/Unity-ZeroMQ-Example)
+(and some head scratching)._
 
-ZeroMQ is a very fast messaging approach and it's simple enough that a few lines of code works.
+## Solution Explanation
 
-NetMQ is a C# implementation of ZeroMQ.
+* [ZeroMQ](http://zeromq.org/) is a very fast messaging library and it's simple enough that a few lines of code works.
+* [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) is the Python bindings for ZeroMQ. You can install it using
+  `pip install pyzmq` command or see more installation options [here](http://zeromq.org/bindings:python) or
+  [here](https://github.com/zeromq/pyzmq).
+* [NetMQ](https://netmq.readthedocs.io/en/latest/) is a native C# port of ZeroMQ. Normally you need to install this using
+  `NuGet` package manager inside `Visual Studio` when you want to build a .NET application, or you could install using
+  `.NET CLI`. But for this repository here, you don't need to do any of the installation because we've already included
+  `AsyncIO.dll` and `NetMQ.dll` for you inside `Assets/Plugins/` directory.
+  If you want to build your own `dll` files, please take a look at
+  [this issue](https://github.com/valkjsaaa/Unity-ZeroMQ-Example/issues/7).
