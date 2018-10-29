@@ -1,6 +1,6 @@
 # Unity3D-Python-Communication
 
-A very simple, fast, and general inter-process communication example between Unity3D C# and Python, using ZeroMQ.
+⚡️ A very simple, fast, and general inter-process communication example between Unity3D C# and Python, using ZeroMQ.
 
 ![unity-cmd-play-example](img/unity-cmd-play-example.gif)
 PS. It looks slow in the GIF above because I put a delay of one second between each message so that you can see it
@@ -27,7 +27,7 @@ working.
 
 If you answer **Yes** to any of these questions but it seems you have found no solutions,
 then this repository is definitely for you!
-(If you answered **Yes to all** questions, you and me are brothers!)
+(If you answered **Yes to all** questions, you and me are brothers! 😏)
 
 I've tried a lot. With a lot of searching on the internet, I've found no solutions that is simple, fast, and general
 enough that I can apply to any kind of communication between Python and Unity3D. All I've done in the past were simply
@@ -56,7 +56,7 @@ There is a one second sleep between each reply on the server (to simulate long p
 
 Please read the comments inside `server.py` and `Assets/Scripts/` and you will understand everything more deeply.
 
-**The most important thing is that you should follow the 3 getting started steps first. Don't skip it!**
+**The most important thing is that you should follow the 3 getting started steps first. Don't skip it!** ❣️
 
 After you've understood most of the stuff but it's not advanced enough, you should consult the official
 [ØMQ - The Guide](http://zguide.zeromq.org/page:all).
