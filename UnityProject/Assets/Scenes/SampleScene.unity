@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 233231048}
   - component: {fileID: 233231047}
   m_Layer: 0
-  m_Name: ClientObject
+  m_Name: HelloClientObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

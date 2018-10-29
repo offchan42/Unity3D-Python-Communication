@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ClientObject : MonoBehaviour
+public class HelloClient : MonoBehaviour
 {
     private HelloRequester _helloRequester;
 
