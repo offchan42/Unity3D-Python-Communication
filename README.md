@@ -3,6 +3,8 @@
 A very simple, fast, and general inter-process communication example between Unity3D C# and Python, using ZeroMQ.
 
 ![unity-cmd-play-example](img/unity-cmd-play-example.gif)
+PS. It looks slow in the GIF above because I put a delay of one second between each message so that you can see it
+working.
 
 ## Introduction
 
