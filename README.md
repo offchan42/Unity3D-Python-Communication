@@ -48,13 +48,13 @@ only log the message to the console and nothing else.
 
 1. Clone this repository using `git clone https://github.com/off99555/Unity3D-Python-Communication.git` command.
 2. Open UnityProject (its `dll` files are targeting .NET 4.x version) and run the `SampleScene`.
-3. Run python file `server.py` using command `python server.py` on a command prompt.
+3. Run python file `PythonFiles/server.py` using command `python server.py` on a command prompt.
 4. You should start seeing messages being logged inside Unity and the command prompt.
 
 Specifically, Unity will send request with a message `Hello` 10 times, and Python will simply reply `World` 10 times.
 There is a one second sleep between each reply on the server (to simulate long processing time of the request).
 
-Please read the comments inside `server.py` and `UnityProject/Assets/Scripts/` and you will understand everything more deeply.
+Please read the comments inside `PythonFiles/server.py` and `UnityProject/Assets/Scripts/` and you will understand everything more deeply.
 
 **The most important thing is that you should follow the 3 getting started steps first. Don't skip it!** ❣️
 
