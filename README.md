@@ -4,19 +4,26 @@ A very simple, fast, and general inter-process communication example between Uni
 
 ## Introduction
 
-* Have you ever wanted to send Unity input to python and do some scientific work (maybe even machine learning task)
-  and return the output to Unity?
 * Have you ever tried to communicate C# code in Unity3D with Python before but could not find a satisfying solution?
 * Have you ever tried implementing communication protocol using file read/write and found out that it's a stupid approach?
 * Have you ever tried communicating using Web HTTP request and found out that it's stupidly slow and high latency?
 * Have you ever tried to communicate by emulating a serial port, and found out that it's not how cool guys do work?
+* Have you ever tried to send Unity input to python and do some scientific work (maybe even machine learning task)
+  and return the output to Unity?
+* Have you ever tried to build a `.dll` from python or even rewrite everything in `C#` because you don't know how to
+  communicate between python and C# processes?
+* Have you ever tried to export a `TensorFlow Protobuf Graph` (Deep learning model) and use `TensorFlowSharp` or
+  `OpenCVForUnity` to import the graph inside Unity because you want to use the model to predict stuff in Unity, but
+  you don't know how to predict inside Python and send result to Unity, so you need to predict inside Unity instead?
+  The heck, you even tried to learn to use `MLAgents` to solve this particular problem?
 
 If you answer **Yes** to any of these questions but it seems you have found no solutions,
 then this repository is definitely for you!
 (If you answered **Yes to all** questions, you and me are brothers!)
 
 I've tried a lot. With a lot of searching on the internet, I've found no solutions that is simple, fast, and general
-enough that I can apply to any kind of communication between Python and Unity3D.
+enough that I can apply to any kind of communication between Python and Unity3D. All I've done in the past were simply
+a hack to either get my scientific computation work in Unity instead of python, or communicate between the processes painfully.
 
 _Until I found ZeroMQ approach from this [repository](https://github.com/valkjsaaa/Unity-ZeroMQ-Example)
 (and some head scratching)._
