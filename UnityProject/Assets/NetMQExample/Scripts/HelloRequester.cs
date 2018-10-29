@@ -38,7 +38,7 @@ public class HelloRequester : RunAbleThread
                     if (gotMessage) break;
                 }
 
-                if (gotMessage) Debug.Log($"Received {message}");
+                if (gotMessage) Debug.Log("Received " + message);
             }
         }
 
