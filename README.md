@@ -23,6 +23,13 @@ _Until I found ZeroMQ approach from this [repository](https://github.com/valkjsa
 
 ## Solution Explanation
 
+We will build a `request-reply` model of ZeroMQ where Python (server) replies whenever Unity (client) requests
+a service.
+
+Specifically, Unity will send request with a message `Hello`, and Python will simply reply `World`.
+
+## Requirements
+
 * [ZeroMQ](http://zeromq.org/) is a very fast messaging library and it's simple enough that a few lines of code works.
 * [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) is the Python bindings for ZeroMQ. You can install it using
   `pip install pyzmq` command or see more installation options [here](http://zeromq.org/bindings:python) or
