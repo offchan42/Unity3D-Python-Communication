@@ -7,6 +7,7 @@ A very simple, fast, and general inter-process communication example between Uni
 * Have you ever tried to communicate C# code in Unity3D with Python before but could not find a satisfying solution?
 * Have you ever tried implementing communication protocol using file read/write and found out that it's a stupid approach?
 * Have you ever tried communicating using Web HTTP request and found out that it's stupidly slow and high latency?
+* Have you ever tried communicating using socket stuff, but it feels like you are reinventing the wheel?
 * Have you ever tried to communicate by emulating a serial port, and found out that it's not how cool guys do work?
 * Have you ever tried to send Unity input to python and do some scientific work (maybe even machine learning task)
   and return the output to Unity?
