@@ -1,29 +1,27 @@
-﻿using System.Collections.Concurrent;
-using System.Threading;
+﻿using System.Threading;
+using AsyncIO;
 using NetMQ;
-using UnityEngine;
 using NetMQ.Sockets;
+using UnityEngine;
 
 public class NetMqListener
 {
     private readonly Thread _listenerWorker;
+    private bool _running;
 
-    private bool _listenerCancelled;
-
-    public delegate void MessageDelegate(string message);
-
-    private readonly MessageDelegate _messageDelegate;
-
-    private readonly ConcurrentQueue<string> _messageQueue = new ConcurrentQueue<string>();
+    public NetMqListener()
+    {
+        _listenerWorker = new Thread(ListenerWork);
+    }
 
     private void ListenerWork()
     {
-        AsyncIO.ForceDotNet.Force(); // this line is needed to prevent unity freeze after one use, not sure why yet
+        ForceDotNet.Force(); // this line is needed to prevent unity freeze after one use, not sure why yet
         using (var client = new RequestSocket())
         {
             client.Connect("tcp://localhost:5555");
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 10 && _running; i++)
             {
                 Debug.Log("Sending Hello");
                 client.SendFrame("Hello");
@@ -36,37 +34,17 @@ public class NetMqListener
         NetMQConfig.Cleanup(); // this line is needed to prevent unity freeze after one use, not sure why yet
     }
 
-    public void Update()
-    {
-        while (!_messageQueue.IsEmpty)
-        {
-            string message;
-            if (_messageQueue.TryDequeue(out message))
-            {
-                _messageDelegate(message);
-            }
-            else
-            {
-                break;
-            }
-        }
-    }
-
-    public NetMqListener(MessageDelegate messageDelegate)
-    {
-        _messageDelegate = messageDelegate;
-        _listenerWorker = new Thread(ListenerWork);
-    }
-
     public void Start()
     {
-        _listenerCancelled = false;
+        _running = true;
         _listenerWorker.Start();
     }
 
     public void Stop()
     {
-        _listenerCancelled = true;
+        _running = false;
+        // block main thread, wait for _listenerWorker to finish its job first, so we can be sure that 
+        // NetMQConfig.Cleanup() will be called before Unity object gets destroyed
         _listenerWorker.Join();
     }
 }
@@ -75,26 +53,10 @@ public class ClientObject : MonoBehaviour
 {
     private NetMqListener _netMqListener;
 
-    private void HandleMessage(string message)
-    {
-        Debug.Log("Received Message: " + message);
-        var splittedStrings = message.Split(' ');
-        if (splittedStrings.Length != 3) return;
-        var x = float.Parse(splittedStrings[0]);
-        var y = float.Parse(splittedStrings[1]);
-        var z = float.Parse(splittedStrings[2]);
-        transform.position = new Vector3(x, y, z);
-    }
-
     private void Start()
     {
-        _netMqListener = new NetMqListener(HandleMessage);
+        _netMqListener = new NetMqListener();
         _netMqListener.Start();
-    }
-
-    private void Update()
-    {
-        _netMqListener.Update();
     }
 
     private void OnDestroy()
