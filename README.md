@@ -2,6 +2,8 @@
 
 A very simple, fast, and general inter-process communication example between Unity3D C# and Python, using ZeroMQ.
 
+![unity-cmd-play-example](img/unity-cmd-play-example.gif)
+
 ## Introduction
 
 * Have you ever tried to communicate C# code in Unity3D with Python before but could not find a satisfying solution?
