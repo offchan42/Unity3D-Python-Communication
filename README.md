@@ -50,7 +50,7 @@ only log the message to the console and nothing else.
 Specifically, Unity will send request with a message `Hello` 10 times, and Python will simply reply `World` 10 times.
 There is a one second sleep between each reply on the server (to simulate long processing time of the request).
 
-Please read the comments inside `server.py` and you will understand everything more deeply.
+Please read the comments inside `server.py` and `Assets/Scripts/` and you will understand everything more deeply.
 
 **The most important thing is that you should follow the 3 getting started steps first. Don't skip it!**
 
