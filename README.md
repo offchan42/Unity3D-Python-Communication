@@ -38,7 +38,7 @@ _Until I found ZeroMQ approach from this [repository](https://github.com/valkjsa
 
 ## Solution Explanation
 
-I've built a `request-reply` model of ZeroMQ where Python (server) replies whenever Unity (client) requests
+I've built a `request-reply` pattern of ZeroMQ where Python (server) replies whenever Unity (client) requests
 a service from Python.
 
 Most of the code are just copies from the official tutorial. I try to make this as simple to grasp as possible, so I
