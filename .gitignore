@@ -1,3 +1,5 @@
+################################## Unity3D #####################################
+
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -34,3 +36,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+################################## VS CODE #####################################
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
