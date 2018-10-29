@@ -24,15 +24,26 @@ _Until I found ZeroMQ approach from this [repository](https://github.com/valkjsa
 ## Solution Explanation
 
 I've built a `request-reply` model of ZeroMQ where Python (server) replies whenever Unity (client) requests
-a service.
+a service from Python.
 
-Specifically, Unity will send request with a message `Hello`, and Python will simply reply `World`.
+Most of the code are just copies from the official tutorial. I try to make this as simple to grasp as possible, so I
+only log the message to the console and nothing else.
 
 ## Getting Started
 
 1. Open UnityProject (its `dll` files are using .NET 4.x version), run the `SampleScene`.
 2. Run python file `server.py` using command `python server.py` on a command prompt.
 3. You should start seeing messages being logged inside Unity and the command prompt.
+
+Specifically, Unity will send request with a message `Hello` 10 times, and Python will simply reply `World` 10 times.
+There is a one second sleep between each reply on the server (to simulate long processing time of the request).
+
+Please read the comments inside python files and you will understand everything more deeply.
+
+**The most important thing is that you should follow the 3 getting started steps first. Don't skip it!**
+
+After you've understood most of the stuff but it's not advanced enough, you should consult the official
+[ØMQ - The Guide](http://zguide.zeromq.org/page:all).
 
 ## Requirements
 

@@ -16,8 +16,12 @@ while True:
     message = socket.recv()
     print("Received request: %s" % message)
 
-    #  Do some 'work'. Try reducing sleep time to see how fast it communicates
+    #  Do some 'work'.
+    #  Try reducing sleep time to 0.01 to see how fast it communicates
+    #  In the real world usage, you just need to replace time.sleep() with
+    #  whatever work you want python to do, maybe a machine learning task?
     time.sleep(1)
 
     #  Send reply back to client
+    #  In the real world usage, after you finish your work, send your output here
     socket.send(b"World")
