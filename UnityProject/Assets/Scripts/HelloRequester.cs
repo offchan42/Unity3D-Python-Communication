@@ -25,9 +25,20 @@ public class HelloRequester : RunAbleThread
             {
                 Debug.Log("Sending Hello");
                 client.SendFrame("Hello");
+                // ReceiveFrameString() blocks the thread until you receive the string, but TryReceiveFrameString()
+                // do not block the thread, you can try commenting one and see what the other does, try to reason why
+                // unity freezes when you use ReceiveFrameString() and play and stop it without running the server
+//                string message = client.ReceiveFrameString();
+//                Debug.Log("Received: " + message);
+                string message = null;
+                bool gotMessage = false;
+                while (Running)
+                {
+                    gotMessage = client.TryReceiveFrameString(out message); // this returns true if it's successful
+                    if (gotMessage) break;
+                }
 
-                string message = client.ReceiveFrameString();
-                Debug.Log($"Received {message}");
+                if (gotMessage) Debug.Log($"Received {message}");
             }
         }
 
