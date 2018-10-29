@@ -14,12 +14,12 @@ A very simple, fast, and general inter-process communication example between Uni
   and return the output to Unity?
 * Have you ever tried to build a `.dll` from python or even rewrite everything in `C#` because you don't know how to
   communicate between python and C# processes?
-* Have you ever tried to use `IronPython` or `Python.NET` inside Unity because you want to communicate between Unity
-  and Python, but it doesn't allow you to install your amazing external python libraries?
+* Have you ever tried to embed `IronPython` or `Python.NET` inside Unity but it doesn't allow you to install your
+  amazing external python libraries? (And its minimal power is pretty ridiculous compared to your external python)
 * Have you ever tried to export a `TensorFlow Protobuf Graph` (Deep learning model) and use `TensorFlowSharp` or
-  `OpenCVForUnity` to import the graph inside Unity because you want to use the model to predict stuff in Unity, but
-  you don't know how to predict inside Python and send result to Unity, so you need to predict inside Unity instead?
-  The heck, you even tried to learn to use `MLAgents` to solve this particular problem?
+  `OpenCVForUnity` to import the graph inside Unity because you want to use the model to predict stuff in Unity, but it
+  doesn't allow you to use/utilize your new NVIDIA GeForce 1080Ti GPU, and it's also hard to code?
+* Tried `MLAgents`, anyone?
 
 If you answer **Yes** to any of these questions but it seems you have found no solutions,
 then this repository is definitely for you!
@@ -42,14 +42,14 @@ only log the message to the console and nothing else.
 
 ## Getting Started
 
-1. Open UnityProject (its `dll` files are using .NET 4.x version), run the `SampleScene`.
+1. Open UnityProject (its `dll` files are targeting .NET 4.x version) and run the `SampleScene`.
 2. Run python file `server.py` using command `python server.py` on a command prompt.
 3. You should start seeing messages being logged inside Unity and the command prompt.
 
 Specifically, Unity will send request with a message `Hello` 10 times, and Python will simply reply `World` 10 times.
 There is a one second sleep between each reply on the server (to simulate long processing time of the request).
 
-Please read the comments inside python files and you will understand everything more deeply.
+Please read the comments inside `server.py` and you will understand everything more deeply.
 
 **The most important thing is that you should follow the 3 getting started steps first. Don't skip it!**
 
