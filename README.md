@@ -2,7 +2,7 @@
 
 ⚡️ A very simple, fast, and general inter-process communication example between Unity3D C# and Python, using ZeroMQ.
 
-![unity-cmd-play-example](img/unity-cmd-play-example.gif)
+![unity-cmd-play-example.gif](img/unity-cmd-play-example.gif)
 PS. It looks slow in the GIF above because I put a delay of one second between each message so that you can see it
 working.
 
@@ -74,3 +74,12 @@ After you've understood most of the stuff but it's not advanced enough, you shou
   `AsyncIO.dll` and `NetMQ.dll` for you inside `UnityProject/Assets/NetMQExample/Plugins/` directory.
   If you want to build your own `dll` files, please take a look at
   [this issue](https://github.com/valkjsaaa/Unity-ZeroMQ-Example/issues/7).
+
+## Troubleshooting
+
+* While running both servers and clients, I kill the server process, and they don't work anymore. Is this a bug?
+
+  No, this is the expected behavior of ZeroMQ because of the simplicity of the code. It's mentioned in the guide
+  [here](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive). If you want to make the code better, which is not
+  the focus of this example, you can learn more about ZeroMQ as suggested in the screenshot below.
+  ![troubleshooting-1.PNG](img/troubleshooting-1.PNG)
