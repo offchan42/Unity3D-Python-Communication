@@ -57,7 +57,7 @@ There is a one second sleep between each reply on the server (to simulate long p
 Please read the comments inside `PythonFiles/server.py` and `UnityProject/Assets/NetMQExample/Scripts/` and you will
 understand everything more deeply.
 
-**The most important thing is that you should follow the 3 getting started steps first. Don't skip it!** ❣️
+**The most important thing is that you should follow the 4 getting started steps first. Don't skip it!** ❣️
 
 After you've understood most of the stuff but it's not advanced enough, you should consult the official
 [ØMQ - The Guide](http://zguide.zeromq.org/page:all).
