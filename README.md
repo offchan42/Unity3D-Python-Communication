@@ -89,5 +89,7 @@ After you've understood most of the stuff but it's not advanced enough, you shou
 
 ## TODO
 
-* [ ] Add example that use Unity's Update() method to receive reply instead of using a separate thread. This means that
-    the call to `TryReceiveFrameString()` will not be too frequent which yields better performance.
+* [ ] Add example that use Unity's Update() method to receive reply instead of using a separate thread to continuously
+    call `TryReceiveFrameString()` in a loop without any delay. This means that
+    the call to `TryReceiveFrameString()` will not be too frequent which yields better performance. It will be called
+    about 60 times a second if the frame rate is 60 FPS.
