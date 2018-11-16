@@ -41,8 +41,11 @@ _Until I found ZeroMQ approach from this [repository](https://github.com/valkjsa
 I've built a `request-reply` pattern of ZeroMQ where Python (server) replies whenever Unity (client) requests
 a service from Python.
 
-Most of the code are just copies from the official tutorial. I try to make this as simple to grasp as possible, so I
-only log the message to the console and nothing else.
+The idea is to create a separate thread inside Unity that will send a request to python, receive a reply and log the reply
+to the console.
+
+Most of the code are just copies from the official ZeroMQ tutorial. I try to make this as simple to grasp as possible,
+so I only log the message to the console and nothing fancy.
 
 ## Getting Started
 
@@ -83,3 +86,8 @@ After you've understood most of the stuff but it's not advanced enough, you shou
   [here](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive). If you want to make the code better, which is not
   the focus of this example, you can learn more about ZeroMQ as suggested in the screenshot below.
   ![troubleshooting-1.PNG](img/troubleshooting-1.PNG)
+
+## TODO
+
+* [ ] Add example that use Unity's Update() method to receive reply instead of using a separate thread. This means that
+    the call to `TryReceiveFrameString()` will not be too frequent which yields better performance.
