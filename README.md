@@ -80,7 +80,7 @@ After you've understood most of the stuff but it's not advanced enough, you shou
 
 ## Troubleshooting
 
-* While running both servers and clients, I kill the server process, and they don't work anymore. Is this a bug?
+* While both server and client are running and communicating fine, I kill the server process, restart the server, then both server and client seem to not be communicating anymore. Why don't they continue communicating? Is this a bug?
 
   No, this is the expected behavior of ZeroMQ because of the simplicity of the code. It's mentioned in the guide
   [here](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive). If you want to make the code better, which is not
