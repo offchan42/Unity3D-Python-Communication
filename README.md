@@ -86,6 +86,8 @@ After you've understood most of the stuff but it's not advanced enough, you shou
   [here](http://zguide.zeromq.org/page:all#Ask-and-Ye-Shall-Receive). If you want to make the code better, which is not
   the focus of this example, you can learn more about ZeroMQ as suggested in the screenshot below.
   ![troubleshooting-1.PNG](img/troubleshooting-1.PNG)
+  
+  The problem is that when you restart the server, the server won't reconnect to the old client anymore. You have to restart the client also.
 
 ## TODO
 
