@@ -74,8 +74,7 @@ After you've understood most of the stuff but it's not advanced enough, you shou
 
 ## Requirements
 
-* [ZeroMQ](http://zeromq.org/) is a very fast messaging library and it's simple enough that a few lines of code works.
-* [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) is the Python bindings for ZeroMQ. You can install it using
+* [PyZMQ](https://pyzmq.readthedocs.io/en/latest/) is the Python bindings for [ZeroMQ]((http://zeromq.org/)). You can install it using
   `pip install pyzmq` command or see more installation options [here](http://zeromq.org/bindings:python) or
   [here](https://github.com/zeromq/pyzmq).
 * [NetMQ](https://netmq.readthedocs.io/en/latest/) is a native C# port of ZeroMQ. Normally you need to install this using
