@@ -9,7 +9,7 @@ working.
 ## Core Pillars
 
 - **very fast** — ZeroMQ is a networking library that allows you to send huge amount of data from server to client in a short period of time. I'm talking about casually sending/receiving 10,000 requests per second.
-- **simple** — You don't have to explicitly open any socket or know anything about low-level networking.
+- **simple** — You don't have to explicitly open and bind a socket or know anything about low-level networking.
 - **general** — You can use this to send/receive any kind of data request. You can send image, video, text, JSON, file, or whatever you want. In this example, we are sending text.
 - **inter-process** — The communication is done inside the same machine. Which means very low-latency.
 
