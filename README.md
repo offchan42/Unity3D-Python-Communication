@@ -84,6 +84,9 @@ After you've understood most of the stuff but it's not advanced enough, you shou
   If you want to build your own `dll` files, please take a look at
   [this issue](https://github.com/valkjsaaa/Unity-ZeroMQ-Example/issues/7).
 
+## Known Issues
+Based on [this issue](https://github.com/zeromq/netmq/issues/631), the NetMQ implementation is not working nicely with Unity. If you create more than one ZeroMQ client in Unity, the Unity editor will freeze.
+
 ## Troubleshooting
 
 * While both server and client are running and communicating fine, I kill the server process, restart the server, then both server and client seem to not be communicating anymore. Why don't they continue communicating? Is this a bug?
