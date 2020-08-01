@@ -29,7 +29,7 @@ working.
   amazing external python libraries? (And its minimal power is pretty ridiculous compared to your external python)
 * Have you ever tried to export a `TensorFlow Protobuf Graph` (Deep learning model) and use `TensorFlowSharp` or
   `OpenCVForUnity` to import the graph inside Unity because you want to use the model to predict stuff in Unity, but it
-  doesn't allow you to use/utilize your new NVIDIA GeForce 1080Ti GPU, and it's also hard to code?
+  doesn't allow you to use/utilize your new NVIDIA GeForce RTX 2080Ti, and it's also hard to code?
 * Tried `MLAgents`, anyone?
 
 If you answer **Yes** to any of these questions but it seems you have found no solutions,
