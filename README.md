@@ -100,8 +100,4 @@ Based on [this issue](https://github.com/zeromq/netmq/issues/631), the NetMQ imp
 
 ## TODO
 
-* [ ] Add example that use Unity's Update() method to receive reply instead of using a separate thread to continuously
-    call `TryReceiveFrameString()` in a loop without any delay. This means that
-    the call to `TryReceiveFrameString()` will not be too frequent which yields better performance. It will be called
-    only about 60 times a second if the frame rate is 60 FPS inside Update() method.
-    The benefit of no separate thread is that there will be no thread-swapping overhead.
+* [ ] Add a complicated example of how to use it for real
