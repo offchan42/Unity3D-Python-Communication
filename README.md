@@ -106,4 +106,4 @@ so I only log the message to the console and nothing fancy. This is to minimize 
 ## TODO
 
 * [ ] Add a complicated example of how to use it for real
-* [ ] Show how to do this with SocketIO. SocketIO is another approach I found very viable and stable. I use `BestHTTP` package in Unity for SocketIO client and use `python-socketio` as python server.
+* [ ] Show how to do this with SocketIO. SocketIO is another approach I found very viable and stable. I use `BestHTTP` package in Unity for SocketIO client and use `python-socketio` as SocketIO server. And it does not have the issue of making Unity editor freezes.
