@@ -51,9 +51,6 @@ a service from Python.
 The idea is to create a separate thread inside Unity that will send a request to python, receive a reply and log the reply
 to the console.
 
-Most of the code are just copies from the official ZeroMQ tutorial. I try to make this as simple to grasp as possible,
-so I only log the message to the console and nothing fancy.
-
 ## Getting Started
 
 1. Clone this repository using `git clone https://github.com/off99555/Unity3D-Python-Communication.git` command.
@@ -97,6 +94,14 @@ Based on [this issue](https://github.com/zeromq/netmq/issues/631), the NetMQ imp
   ![troubleshooting-1.PNG](img/troubleshooting-1.PNG)
   
   The problem is that when you restart the server, the server won't reconnect to the old client anymore. You have to restart the client also.
+
+## Disclaimer
+
+This repository is designed to be a **minimal learning resource** for getting started. It's not a fully working high-level package.
+After you understand the example, my job is done.
+
+Most of the code are just copies from the official ZeroMQ tutorial. I try to make this as simple to grasp as possible,
+so I only log the message to the console and nothing fancy. This is to minimize the unnecessary learning curve.
 
 ## TODO
 
